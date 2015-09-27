@@ -250,13 +250,21 @@
             />
     </RadioGroup>
 
-    <Button
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:text="Diagnose"
         android:layout_height="wrap_content"
-        android:id="@+id/diagnose"
-        android:layout_below="@+id/transferrin_receptor"
-        />
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:layout_width="match_parent"
+            android:text="Analyse"
+            android:layout_height="wrap_content"
+            android:id="@+id/diagnose"
+            />
+
+    </RelativeLayout>
+
 
 
 </RelativeLayout>
+

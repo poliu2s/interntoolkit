@@ -6,4 +6,16 @@
     android:paddingBottom="20dp"
 
     >
+
+    <TextView
+        android:id="@+id/diagnosis_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        >
+
+    </TextView>
 </RelativeLayout>

@@ -6,4 +6,6 @@
     <string name="low">Low</string>
     <string name="normal">Normal</string>
     <string name="high">High</string>
+
+    <string name="diagnosis_string">None</string>
 </resources>

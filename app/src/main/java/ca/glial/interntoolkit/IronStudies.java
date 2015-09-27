@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class IronStudies extends Activity {
 
@@ -18,6 +19,7 @@ public class IronStudies extends Activity {
     private String transferrin;
     private String ferritin;
     private String transferrin_receptor;
+    private TextView tv;
 
 
     @Override
@@ -34,10 +36,15 @@ public class IronStudies extends Activity {
     }
 
     public void openDialog() {
-
         final Dialog dialog = new Dialog(this);
+
         dialog.setContentView(R.layout.diagnosis);
-        dialog.setTitle("Diagnosis: " + diagnoseIronStudies());
+        tv = (TextView) dialog.findViewById(R.id.diagnosis_title);
+        dialog.setTitle("Diagnosis:");
+
+
+        tv.setText(diagnoseIronStudies());
+
         dialog.show();
     }
 
