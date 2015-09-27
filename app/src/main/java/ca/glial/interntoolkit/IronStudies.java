@@ -8,8 +8,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class IronStudies extends Activity {
+
+    private String serum_iron;
+    private String tibc;
+    private String transferrin;
+    private String ferritin;
+    private String transferrin_receptor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +34,133 @@ public class IronStudies extends Activity {
     }
 
     public void openDialog() {
-        final Dialog dialog = new Dialog(this); // context, this etc.
+
+        final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.diagnosis);
-//        dialog.setTitle(R.string.dialog_title);
+        dialog.setTitle("Diagnosis: " + diagnoseIronStudies());
         dialog.show();
+    }
+
+    public String diagnoseIronStudies() {
+        String diagnosis = "Abnormal";
+
+        if (serum_iron.equals("low") &&
+                tibc.equals("high") &&
+                transferrin.equals("low") &&
+                ferritin.equals("low") &&
+                transferrin_receptor.equals("high"))
+            diagnosis = "Iron deficiency";
+
+        else if (serum_iron.equals("low") &&
+                tibc.equals("low") &&
+                transferrin.equals("low") &&
+                ferritin.equals("normal") &&
+                transferrin_receptor.equals("normal"))
+            diagnosis = "Anaemia of chronic disease";
+
+        else if (serum_iron.equals("low") &&
+                (tibc.equals("low") || tibc.equals("normal")) &&
+                (transferrin.equals("low") || transferrin.equals("low"))&&
+                ferritin.equals("normal") &&
+                transferrin_receptor.equals("high"))
+            diagnosis = "Iron deficiency and inflammation";
+
+        else if (serum_iron.equals("low") &&
+                tibc.equals("low") &&
+                transferrin.equals("low") &&
+                ferritin.equals("high") &&
+                transferrin_receptor.equals("normal"))
+            diagnosis = "Acute phase response";
+
+        else if (serum_iron.equals("high") &&
+                (tibc.equals("low") || tibc.equals("normal")) &&
+                transferrin.equals("high") &&
+                ferritin.equals("high") &&
+                transferrin_receptor.equals("decreased"))
+            diagnosis = "Iron overload";
+
+        else if (serum_iron.equals("normal") &&
+                tibc.equals("normal") &&
+                transferrin.equals("normal") &&
+                ferritin.equals("normal") &&
+                transferrin_receptor.equals("normal"))
+            diagnosis = "Normal";
+
+        return diagnosis;
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.serum_iron_low:
+                if (checked)
+                    serum_iron = "low";
+                    break;
+            case R.id.serum_iron_normal:
+                if (checked)
+                    serum_iron = "normal";
+                    break;
+            case R.id.serum_iron_high:
+                if (checked)
+                    serum_iron = "high";
+                    break;
+
+            case R.id.tibc_low:
+                if (checked)
+                    tibc = "low";
+                    break;
+            case R.id.tibc_normal:
+                if (checked)
+                    tibc = "normal";
+                    break;
+            case R.id.tibc_high:
+                if (checked)
+                    tibc = "high";
+                    break;
+
+            case R.id.transferrin_low:
+                if (checked)
+                    transferrin = "low";
+                    break;
+            case R.id.transferrin_normal:
+                if (checked)
+                    transferrin = "normal";
+                    break;
+            case R.id.transferrin_high:
+                if (checked)
+                    transferrin = "high";
+                    break;
+
+            case R.id.ferritin_low:
+                if (checked)
+                    ferritin = "low";
+                break;
+            case R.id.ferritin_normal:
+                if (checked)
+                    ferritin = "normal";
+                break;
+            case R.id.ferritin_high:
+                if (checked)
+                    ferritin = "high";
+                break;
+
+            case R.id.transferrin_receptor_low:
+                if (checked)
+                    transferrin_receptor = "low";
+                break;
+            case R.id.transferrin_receptor_normal:
+                if (checked)
+                    transferrin_receptor = "normal";
+                break;
+            case R.id.transferrin_receptor_high:
+                if (checked)
+                    transferrin_receptor = "high";
+                break;
+
+        }
     }
 
     @Override

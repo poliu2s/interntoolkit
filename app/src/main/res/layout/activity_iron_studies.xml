@@ -23,23 +23,32 @@
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Low"
+            android:text="@string/low"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/serum_iron_low"
+            android:onClick="onRadioButtonClicked"
+
             />
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Normal"
+            android:text="@string/normal"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/serum_iron_normal"
+            android:onClick="onRadioButtonClicked"
+
             />
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="High"
+            android:text="@string/high"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/serum_iron_high"
+            android:onClick="onRadioButtonClicked"
+
             />
     </RadioGroup>
 
@@ -66,6 +75,9 @@
             android:text="Low"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/tibc_low"
+            android:onClick="onRadioButtonClicked"
+
             />
         <RadioButton
             android:layout_width="match_parent"
@@ -73,6 +85,9 @@
             android:text="Normal"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/tibc_normal"
+            android:onClick="onRadioButtonClicked"
+
             />
         <RadioButton
             android:layout_width="match_parent"
@@ -80,6 +95,9 @@
             android:text="High"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/tibc_high"
+            android:onClick="onRadioButtonClicked"
+
             />
     </RadioGroup>
 
@@ -106,6 +124,9 @@
             android:text="Low"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/transferrin_low"
+            android:onClick="onRadioButtonClicked"
+
             />
         <RadioButton
             android:layout_width="match_parent"
@@ -113,6 +134,9 @@
             android:text="Normal"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/transferrin_normal"
+            android:onClick="onRadioButtonClicked"
+
             />
         <RadioButton
             android:layout_width="match_parent"
@@ -120,16 +144,19 @@
             android:text="High"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/transferrin_high"
+            android:onClick="onRadioButtonClicked"
+
             />
     </RadioGroup>
 
     <TextView
-    android:text="Serum ferritin"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/ferritin_label"
-    android:layout_below="@+id/transferrin"
-    android:gravity="center"
+        android:text="Serum ferritin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ferritin_label"
+        android:layout_below="@+id/transferrin"
+        android:gravity="center"
     />
 
     <RadioGroup
@@ -146,6 +173,9 @@
             android:text="Low"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/ferritin_low"
+            android:onClick="onRadioButtonClicked"
+
             />
         <RadioButton
             android:layout_width="match_parent"
@@ -153,6 +183,10 @@
             android:text="Normal"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/ferritin_normal"
+            android:onClick="onRadioButtonClicked"
+
+
             />
         <RadioButton
             android:layout_width="match_parent"
@@ -160,6 +194,9 @@
             android:text="High"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/ferritin_high"
+            android:onClick="onRadioButtonClicked"
+
             />
     </RadioGroup>
 
@@ -187,6 +224,9 @@
             android:text="Low"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/transferrin_receptor_low"
+            android:onClick="onRadioButtonClicked"
+
             />
         <RadioButton
             android:layout_width="match_parent"
@@ -194,6 +234,9 @@
             android:text="Normal"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/transferrin_receptor_normal"
+            android:onClick="onRadioButtonClicked"
+
             />
         <RadioButton
             android:layout_width="match_parent"
@@ -201,6 +244,9 @@
             android:text="High"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/transferrin_receptor_high"
+            android:onClick="onRadioButtonClicked"
+
             />
     </RadioGroup>
 
